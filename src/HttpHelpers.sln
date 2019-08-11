@@ -1,24 +1,34 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.421
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29201.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klepeis.Http.Client", "Klepeis.Http.Client\Klepeis.Http.Client.csproj", "{FE882FF3-0D81-431F-B8ED-6E362A5E9419}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpHelpers", "Klepeis.Http.Client\HttpHelpers.csproj", "{FE882FF3-0D81-431F-B8ED-6E362A5E9419}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klepeis.Http.Client.Tests", "Klepeis.Http.Client.Tests\Klepeis.Http.Client.Tests.csproj", "{C150BDFC-056E-450D-A74E-DC296F67BD5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpHelpers.Tests", "Klepeis.Http.Client.Tests\HttpHelpers.Tests.csproj", "{C150BDFC-056E-450D-A74E-DC296F67BD5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		NETCOREAPP|Any CPU = NETCOREAPP|Any CPU
+		NETFRAMEWORK|Any CPU = NETFRAMEWORK|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{FE882FF3-0D81-431F-B8ED-6E362A5E9419}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FE882FF3-0D81-431F-B8ED-6E362A5E9419}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE882FF3-0D81-431F-B8ED-6E362A5E9419}.NETCOREAPP|Any CPU.ActiveCfg = NETCOREAPP|Any CPU
+		{FE882FF3-0D81-431F-B8ED-6E362A5E9419}.NETCOREAPP|Any CPU.Build.0 = NETCOREAPP|Any CPU
+		{FE882FF3-0D81-431F-B8ED-6E362A5E9419}.NETFRAMEWORK|Any CPU.ActiveCfg = NETFRAMEWORK|Any CPU
+		{FE882FF3-0D81-431F-B8ED-6E362A5E9419}.NETFRAMEWORK|Any CPU.Build.0 = NETFRAMEWORK|Any CPU
 		{FE882FF3-0D81-431F-B8ED-6E362A5E9419}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE882FF3-0D81-431F-B8ED-6E362A5E9419}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C150BDFC-056E-450D-A74E-DC296F67BD5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C150BDFC-056E-450D-A74E-DC296F67BD5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C150BDFC-056E-450D-A74E-DC296F67BD5C}.NETCOREAPP|Any CPU.ActiveCfg = NETCOREAPP|Any CPU
+		{C150BDFC-056E-450D-A74E-DC296F67BD5C}.NETCOREAPP|Any CPU.Build.0 = NETCOREAPP|Any CPU
+		{C150BDFC-056E-450D-A74E-DC296F67BD5C}.NETFRAMEWORK|Any CPU.ActiveCfg = NETFRAMEWORK|Any CPU
+		{C150BDFC-056E-450D-A74E-DC296F67BD5C}.NETFRAMEWORK|Any CPU.Build.0 = NETFRAMEWORK|Any CPU
 		{C150BDFC-056E-450D-A74E-DC296F67BD5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C150BDFC-056E-450D-A74E-DC296F67BD5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection

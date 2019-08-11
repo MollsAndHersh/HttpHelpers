@@ -2,7 +2,7 @@ using System;
 using System.Net.Http;
 using Xunit;
 
-namespace Klepeis.Http.Client.Tests
+namespace HttpHelpers.Tests
 {
     public class HttpClientBaseTests
     {
