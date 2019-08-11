@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Klepeis.Http.Client\HttpHelpers.csproj" />
+    <ProjectReference Include="..\HttpHelpers\HttpHelpers.csproj" />
   </ItemGroup>
 
 </Project>
