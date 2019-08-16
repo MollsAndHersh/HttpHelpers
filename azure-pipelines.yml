@@ -17,5 +17,5 @@ steps:
   displayName: Build
   inputs:
     command: 'build'
-    projects: 'src/HttpHelpers/HttpHelpers.csproj'
+    projects:  '**/*.csproj'
     arguments: '--configuration Release'
