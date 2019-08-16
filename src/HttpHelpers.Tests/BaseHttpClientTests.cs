@@ -4,7 +4,7 @@ using Xunit;
 
 namespace HttpHelpers.Tests
 {
-    public class HttpClientBaseTests
+    public class BaseHttpClientTests
     {
         [Fact]
         public void CreateHttpRequestMessage_Success()
@@ -40,7 +40,7 @@ namespace HttpHelpers.Tests
         }
     }
 
-    public class TestObject : HttpClientBase
+    public class TestObject : BaseHttpClient
     {
         public TestObject(HttpClient httpClient)
             : base(httpClient)
