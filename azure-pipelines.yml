@@ -28,7 +28,7 @@ steps:
     command: 'test'
     projects:  '**/*Tests.csproj'
     arguments: '--configuration $(buildConfiguration)'
-- task: DotNetCoreCLI@2
+- task: DotNetCoreCLI@2 
   displayName: Pack
   inputs:
     command: 'pack'
