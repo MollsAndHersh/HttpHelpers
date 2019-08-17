@@ -24,13 +24,13 @@ steps:
     arguments: '--configuration $(buildConfiguration)'
 - task: DotNetCoreCLI@2 
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
-  displayName: Pack - Release Branch
+  displayName: Pack - Master Branch
   inputs:
     command: 'pack'
     packagesToPack: 'src/HttpHelpers/HttpHelpers.csproj'
 - task: DotNetCoreCLI@2 
   condition: and(succeeded(), ne(variables['Build.SourceBranch'], 'refs/heads/master'))
-  displayName: Pack - Non-Release Branch
+  displayName: Pack - Non-Master Branch
   inputs:
     command: 'pack'
     packagesToPack: 'src/HttpHelpers/HttpHelpers.csproj'
