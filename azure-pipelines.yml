@@ -32,7 +32,7 @@ steps:
   inputs:
     command: 'pack'
     versioningScheme: byEnvVar
-    versionEnvVar: '$(Version.MajorMinor).$(Version.Revision)"-Pre"'
+    versionEnvVar: '$(Version.MajorMinor)"."$(Version.Revision)"-Pre"'
     packagesToPack: 'src/HttpHelpers/HttpHelpers.csproj'
     buildProperties: 'VersionSuffix=-$(Build.BuildId)'
 - task: DotNetCoreCLI@2
