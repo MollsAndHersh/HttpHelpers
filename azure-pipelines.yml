@@ -31,3 +31,10 @@ steps:
     command: 'pack'
     packagesToPack: 'src/HttpHelpers/HttpHelpers.csproj'
     buildProperties: 'VersionSuffix=-$(Build.BuildId)'
+- task: DotNetCoreCLI@2
+  displayName: NuGet Push
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: '502aa7b7-3810-4d07-9ff3-88b0d47ef2d1'
