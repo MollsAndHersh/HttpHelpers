@@ -27,14 +27,18 @@ steps:
   displayName: Pack - Release Branch
   inputs:
     command: 'pack'
+    configuration: $(buildConfiguration)
+    nobuild: true
     packagesToPack: 'src/HttpHelpers/HttpHelpers.csproj'
 - task: DotNetCoreCLI@2 
   condition: and(succeeded(), ne(variables['Build.SourceBranch'], 'refs/heads/master'))
   displayName: Pack - Non-Release Branch
   inputs:
     command: 'pack'
+    configuration: $(buildConfiguration)
+    nobuild: true
     packagesToPack: 'src/HttpHelpers/HttpHelpers.csproj'
-    buildProperties: 'VersionSuffix=-pre'
+    buildProperties: 'VersionSuffix="-pre"'
 - task: DotNetCoreCLI@2
   displayName: NuGet Push
   inputs:
