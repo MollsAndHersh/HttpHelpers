@@ -29,7 +29,6 @@ steps:
   displayName: Pack
   inputs:
     command: 'pack'
-    versioningScheme: byEnvVar
     packagesToPack: 'src/HttpHelpers/HttpHelpers.csproj'
     buildProperties: 'VersionSuffix=-$(Build.BuildId)'
 - task: DotNetCoreCLI@2
