@@ -1,3 +1,5 @@
+# ASP.NET Core
+# Build and test ASP.NET Core projects targeting .NET Core.
 # Add steps that run tests, create a NuGet package, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
@@ -6,6 +8,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+
 steps:
 - task: DotNetCoreCLI@2
   displayName: Build
@@ -24,14 +27,18 @@ steps:
   displayName: Pack - Release Branch
   inputs:
     command: 'pack'
+    configuration: $(buildConfiguration)
+    nobuild: true
     packagesToPack: 'src/HttpHelpers/HttpHelpers.csproj'
 - task: DotNetCoreCLI@2 
   condition: and(succeeded(), ne(variables['Build.SourceBranch'], 'refs/heads/master'))
   displayName: Pack - Non-Release Branch
   inputs:
     command: 'pack'
+    configuration: $(buildConfiguration)
+    nobuild: true
     packagesToPack: 'src/HttpHelpers/HttpHelpers.csproj'
-    buildProperties: 'VersionSuffix="-pre"'
+    buildProperties: 'VersionSuffix="pre"'
 - task: DotNetCoreCLI@2
   displayName: NuGet Push
   inputs:
