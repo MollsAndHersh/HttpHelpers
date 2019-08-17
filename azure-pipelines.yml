@@ -18,7 +18,7 @@ steps:
   inputs:
     command: 'build'
     projects:  'src/HttpHelpers/HttpHelpers.csproj'
-    arguments: '--configuration Release'
+    arguments: '--configuration Release --version-suffix "-$(Build.BuildId)"'
 - task: DotNetCoreCLI@2
   displayName: Test
   inputs:
@@ -30,4 +30,4 @@ steps:
   inputs:
     command: 'pack'
     packagesToPack: 'src/HttpHelpers/HttpHelpers.csproj'
-    buildProperties: 'VersionSuffix=-$(Build.Build)'
+    buildProperties: 'VersionSuffix=-$(Build.BuildId)'
