@@ -28,7 +28,6 @@ steps:
   inputs:
     command: 'pack'
     configuration: $(buildConfiguration)
-    packDirectory: '$(Build.ArtifactStagingDirectory)/packages/release'
     nobuild: true
     packagesToPack: 'src/HttpHelpers/HttpHelpers.csproj'
 - task: DotNetCoreCLI@2 
@@ -38,7 +37,6 @@ steps:
     command: 'pack'
     configuration: $(buildConfiguration)
     nobuild: true
-    packDirectory: '$(Build.ArtifactStagingDirectory)/packages/prerelease'
     packagesToPack: 'src/HttpHelpers/HttpHelpers.csproj'
     buildProperties: 'VersionSuffix="-pre"'
 - task: DotNetCoreCLI@2
