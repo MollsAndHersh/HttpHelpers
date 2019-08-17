@@ -31,7 +31,7 @@ steps:
   inputs:
     command: 'pack'
     packagesToPack: 'src/HttpHelpers/HttpHelpers.csproj'
-    buildProperties: 'VersionSuffix=pre'
+    buildProperties: 'VersionSuffix="-pre"'
 - task: DotNetCoreCLI@2
   displayName: NuGet Push
   inputs:
