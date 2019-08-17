@@ -14,6 +14,12 @@ namespace HttpHelpers
             _client = client;
         }
 
+        /// <summary>
+        /// Create HttpRequest
+        /// </summary>
+        /// <param name="httpMethod"></param>
+        /// <param name="requestUri"></param>
+        /// <returns></returns>
         protected HttpRequestMessage CreateHttpRequestMessage(HttpMethod httpMethod, string requestUri)
         {
             return new HttpRequestMessage(httpMethod, requestUri);
@@ -29,6 +35,11 @@ namespace HttpHelpers
             return returnValue;
         }
 
+        /// <summary>
+        /// Send HttpRequestMessage
+        /// </summary>
+        /// <param name="requestMessage"></param>
+        /// <returns></returns>
         protected async Task SendHttpRequestMessageAsync(HttpRequestMessage requestMessage)
         {
             HttpResponseMessage response = await _client.SendAsync(requestMessage);
