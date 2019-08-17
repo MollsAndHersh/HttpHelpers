@@ -10,6 +10,8 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
+  Version.MajorMinor: 1.0
+  Version.Revision: $[counter(variables['Version.MajorMinor'], 0)]
   buildConfiguration: 'Release'
 
 steps:
@@ -37,5 +39,4 @@ steps:
     command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
     nuGetFeedType: 'internal'
-    versioningScheme: byEnvVar
     publishVstsFeed: '0519d52d-4ba9-4252-8042-1e0a4fd14def'
