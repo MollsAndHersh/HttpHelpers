@@ -17,7 +17,7 @@ steps:
   displayName: Build
   inputs:
     command: 'build'
-    projects:  '**/*.csproj'
+    projects:  'src/HttpHelpers/HttpHelpers.csproj'
     arguments: '--configuration Release'
 - task: DotNetCoreCLI@2
   displayName: Test
@@ -25,3 +25,9 @@ steps:
     command: 'test'
     projects:  '**/*Tests.csproj'
     arguments: '--configuration Release'
+- task: DotNetCoreCLI@2
+  displayName: Pack
+  inputs:
+    command: 'pack'
+    packagesToPack: 'src/HttpHelpers/HttpHelpers.csproj'
+    buildProperties: 'VersionSuffix=-$(Build.Build)'
