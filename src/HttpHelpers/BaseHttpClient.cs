@@ -35,6 +35,11 @@ namespace HttpHelpers
             return returnValue;
         }
 
+        /// <summary>
+        /// Send HttpRequestMessage
+        /// </summary>
+        /// <param name="requestMessage"></param>
+        /// <returns></returns>
         protected async Task SendHttpRequestMessageAsync(HttpRequestMessage requestMessage)
         {
             HttpResponseMessage response = await _client.SendAsync(requestMessage);
