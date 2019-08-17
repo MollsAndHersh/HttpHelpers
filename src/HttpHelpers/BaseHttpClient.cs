@@ -14,6 +14,12 @@ namespace HttpHelpers
             _client = client;
         }
 
+        /// <summary>
+        /// Create HttpRequest
+        /// </summary>
+        /// <param name="httpMethod"></param>
+        /// <param name="requestUri"></param>
+        /// <returns></returns>
         protected HttpRequestMessage CreateHttpRequestMessage(HttpMethod httpMethod, string requestUri)
         {
             return new HttpRequestMessage(httpMethod, requestUri);
