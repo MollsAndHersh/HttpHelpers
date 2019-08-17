@@ -18,13 +18,13 @@ steps:
   inputs:
     command: 'build'
     projects:  'src/HttpHelpers/HttpHelpers.csproj'
-    arguments: '--configuration Release --version-suffix "-$(Build.BuildId)"'
+    arguments: '--configuration $(buildConfiguration) --version-suffix "-$(Build.BuildId)"'
 - task: DotNetCoreCLI@2
   displayName: Test
   inputs:
     command: 'test'
     projects:  '**/*Tests.csproj'
-    arguments: '--configuration Release'
+    arguments: '--configuration $(buildConfiguration)'
 - task: DotNetCoreCLI@2
   displayName: Pack
   inputs:
@@ -37,4 +37,5 @@ steps:
     command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
     nuGetFeedType: 'internal'
+    versioningScheme: byEnvVar
     publishVstsFeed: '0519d52d-4ba9-4252-8042-1e0a4fd14def'
