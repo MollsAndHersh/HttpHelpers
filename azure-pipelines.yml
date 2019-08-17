@@ -10,9 +10,6 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  Major: '1'
-  Minor: '0'
-  Patch: '3-pre'
   buildConfiguration: 'Release'
 
 steps:
@@ -33,9 +30,6 @@ steps:
   inputs:
     command: 'pack'
     versioningScheme: byEnvVar
-    majorVersion: '$(Major)'
-    minorVersion: '$(Minor)'
-    patchVersion: '$(Patch)'
     packagesToPack: 'src/HttpHelpers/HttpHelpers.csproj'
     buildProperties: 'VersionSuffix=-$(Build.BuildId)'
 - task: DotNetCoreCLI@2
