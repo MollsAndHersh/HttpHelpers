@@ -31,6 +31,8 @@ steps:
   displayName: Pack
   inputs:
     command: 'pack'
+    versioningScheme: byEnvVar
+    versionEnvVar: '$(Version.MajorMinor).$(Version.Revision)-Pre'
     packagesToPack: 'src/HttpHelpers/HttpHelpers.csproj'
     buildProperties: 'VersionSuffix=-$(Build.BuildId)'
 - task: DotNetCoreCLI@2
@@ -39,6 +41,4 @@ steps:
     command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
     nuGetFeedType: 'internal'
-    versioningScheme: byEnvVar
-    versionEnvVar: '$(Version.MajorMinor).$(Version.Revision)-Pre'
     publishVstsFeed: '0519d52d-4ba9-4252-8042-1e0a4fd14def'
