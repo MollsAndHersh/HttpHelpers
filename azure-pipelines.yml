@@ -44,8 +44,8 @@ steps:
     buildProperties: 'VersionSuffix="-pre"'
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'push'
-    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-    nuGetFeedType: 'external'
-    publishFeedCredentials: 'Nuget'
+    command: 'custom'
+    arguments: >
+      push $(Build.ArtifactStagingDirectory)/*.nupkg
+      -s $(NuGetSourceServerUrl)
+      -k $(NuGetSourceServerApiKey)
