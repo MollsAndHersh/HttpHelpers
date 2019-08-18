@@ -1,2 +1,2 @@
 # HttpClient-Helpers
-[![HttpHelpers package in Klepeis feed in Azure Artifacts](https://mattklepeis.feeds.visualstudio.com/_apis/public/Packaging/Feeds/0519d52d-4ba9-4252-8042-1e0a4fd14def/Packages/49a5c56c-62cb-4a67-aa2b-0621edd3016b/Badge)](https://mattklepeis.visualstudio.com/Demo%20Application%20Structure/_packaging?_a=package&feed=0519d52d-4ba9-4252-8042-1e0a4fd14def&package=49a5c56c-62cb-4a67-aa2b-0621edd3016b&preferRelease=true)
+![Nuget](https://img.shields.io/nuget/v/Klepeis.HttpHelpers)
