@@ -43,6 +43,15 @@ steps:
     packagesToPack: 'src/HttpHelpers/HttpHelpers.csproj'
     buildProperties: 'VersionSuffix="-pre"'
 - task: DotNetCoreCLI@2
+  displayName: Local Artifact Push
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: '0519d52d-4ba9-4252-8042-1e0a4fd14def'
+- task: DotNetCoreCLI@2
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+  displayName: Extneral Push To Nuget.Org
   inputs:
     command: 'custom'
     custom: 'nuget'
