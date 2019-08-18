@@ -45,7 +45,5 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'custom'
-    arguments: >
-      push $(Build.ArtifactStagingDirectory)/*.nupkg
-      -s $(NuGetSourceServerUrl)
-      -k $(NuGetSourceServerApiKey)
+    custom: 'nuget'
+    arguments: 'push $(Build.ArtifactStagingDirectory)/*.nupkg -s $(NuGetSourceServerUrl) -k $(NuGetSourceServerApiKey)'
