@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <Version>1.0.3$(VersionSuffix)</Version>
+    <Version>1.0.4$(VersionSuffix)</Version>
     <PackageId>Klepeis.HttpHelpers</PackageId>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <IncludeSymbols>true</IncludeSymbols>
