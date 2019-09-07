@@ -3,7 +3,7 @@ name: ASP.NET Core CI
 on: [push]
 
 jobs:
-  build:
+  Build:
 
     runs-on: ubuntu-latest
     
@@ -16,7 +16,7 @@ jobs:
     - name: Build with dotnet
       run: dotnet build src/HttpHelpers/HttpHelpers.csproj --configuration Release
       
-  test:
+  Test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
