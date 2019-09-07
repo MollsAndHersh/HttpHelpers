@@ -15,6 +15,15 @@ jobs:
         dotnet-version: 2.2.108
     - name: Build with dotnet
       run: dotnet build src/HttpHelpers/HttpHelpers.csproj --configuration Release
+      
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 2.2.108
     - name: Execute Unit Tests
       run: dotnet test src/HttpHelpers.Tests/HttpHelpers.Tests.csproj --configuration Release
     - name: Publish On Master
