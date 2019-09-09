@@ -23,6 +23,4 @@ jobs:
       run: dotnet test src/HttpHelpers.Tests/HttpHelpers.Tests.csproj --configuration Release
     - name: Publish On Master
       if: github.ref == 'refs/heads/master'
-      run: echo ${GITHUB_REF}
-      #run: dotnet nuget push Klepeis.HttpHelpers.nupgk -k ${{secrets.GitHubRepoAccessToken}} -Source https://github.com/klepeis/HttpHelpers/packages
-
+      run: dotnet nuget push Klepeis.HttpHelpers.nupgk -k ${{secrets.GitHubRepoAccessToken}} -Source https://github.com/klepeis/HttpHelpers/packages
